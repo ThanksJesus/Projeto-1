@@ -4,7 +4,6 @@ include 'conexao_banco.php';
 
 
 // Inserir dados no banco
-$id = $_POST['id'];
 $email = $_POST['email']; 
 $senha = $_POST['senha'];
 
@@ -26,4 +25,5 @@ if($row == 1) { // caso encontrada 1 linha, então o usuário está cadastrado
 }
 
 ?>
+
 
