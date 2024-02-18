@@ -9,7 +9,17 @@ $nome = $_POST['nome'];
 $email = $_POST['email'];
 $senha = $_POST['senha'];
 
-if ($email >= 1){
+
+$nome = mysqli_real_escape_string($connection, $nome);
+$email = mysqli_real_escape_string($connection, $email);
+$senha = mysqli_real_escape_string($connection, $senha);
+
+$sql = "SELECT * FROM cadastro WHERE email = '$email'";
+$result = $connection->query($sql);
+
+
+if ($result->num_rows > 0){
+
     echo "<script style='background-color:black;'> alert ( 'Email já cadastrado' ) </script>";
     
     echo "<meta http-equiv='refresh' content='0; url=cadastro.php'>";
